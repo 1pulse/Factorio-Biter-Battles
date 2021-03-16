@@ -12,9 +12,9 @@ local string_find = string.find
 
 -- Only add upgrade research balancing logic in this section
 -- All values should be in tables.lua
-local function proj_buff(current_value,force_name)
+local function proj_buff(upgrade_value,force_name)
 	if not global.combat_balance[force_name].bullet then global.combat_balance[force_name].bullet = get_ammo_modifier("bullet") end
-	global.combat_balance[force_name].bullet = global.combat_balance[force_name].bullet + current_value
+	global.combat_balance[force_name].bullet = global.combat_balance[force_name].bullet + upgrade_value
 	game.forces[force_name].set_ammo_damage_modifier("bullet", global.combat_balance[force_name].bullet)
 end
 local function laser_buff(current_value,force_name)
@@ -101,25 +101,25 @@ local balance_functions = {
 		game.forces[force_name].set_turret_attack_modifier("gun-turret",0)
 	end,
 	["physical-projectile-damage-1"] = function(force_name)
-		proj_buff(0.3,force_name)
+		proj_buff(get_upgrade_modifier("bullet-1"),force_name)
 	end,
 	["physical-projectile-damage-2"] = function(force_name)
-		proj_buff(0.3,force_name)
+		proj_buff(get_upgrade_modifier("bullet-2"),force_name)
 	end,
 	["physical-projectile-damage-3"] = function(force_name)
-		proj_buff(0.3,force_name)
+		proj_buff(get_upgrade_modifier("bullet-3"),force_name)
 	end,
 	["physical-projectile-damage-4"] = function(force_name)
-		proj_buff(0.3,force_name)
+		proj_buff(get_upgrade_modifier("bullet-4"),force_name)
 	end,
 	["physical-projectile-damage-5"] = function(force_name)
-		proj_buff(0.3,force_name)
+		proj_buff(get_upgrade_modifier("bullet-5"),force_name)
 	end,
 	["physical-projectile-damage-6"] = function(force_name)
-		proj_buff(0.3,force_name)
+		proj_buff(get_upgrade_modifier("bullet-6"),force_name)
 	end,
 	["physical-projectile-damage-7"] = function(force_name)
-		proj_buff(0.3,force_name)
+		proj_buff(get_upgrade_modifier("bullet-7"),force_name)
 	end,
 }
 
