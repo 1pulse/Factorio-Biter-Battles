@@ -16,7 +16,7 @@ local diff_vote = require "maps.biter_battles_v2.difficulty_vote"
 require "maps.biter_battles_v2.sciencelogs_tab"
 require 'maps.biter_battles_v2.commands'
 require "modules.spawners_contain_biters"
-
+require "maps.biter_battles_v2.grenades"
 local function on_player_joined_game(event)
 	local surface = game.surfaces[global.bb_surface_name]
 	local player = game.players[event.player_index]
